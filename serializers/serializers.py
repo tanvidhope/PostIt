@@ -18,10 +18,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
-    articles = Article.objects.get(author=owner)
-
     class Meta:
         model = User
-        fields = ('id', 'username', 'articles')
-        # fields = ('id', 'username')
+        # fields = ('id', 'username', 'articles')
+        fields = ('id', 'username', 'email')

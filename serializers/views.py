@@ -50,5 +50,5 @@ class UserList(generics.ListAPIView):
 
 
 class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.get(author=)
+    queryset = User.objects.all()
     serializer_class = UserSerializer
